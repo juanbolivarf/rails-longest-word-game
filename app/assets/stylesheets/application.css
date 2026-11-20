@@ -8,3 +8,14 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.letter {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 8px;
+  background: #212529;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+<div class="container py-5 text-center">
+  <h1 class="mb-4">Result</h1>
+  <% if !@included %>
+    <p class="fs-4">Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></p>
+  <% elsif !@english_word %>
+    <p class="fs-4">Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+    <p class="fs-4"><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+    <p>+<%= @points %> points</p>
+  <% end %>
+  <p class="text-muted">Total score: <%= @total_score %></p>
+  <%= link_to "New game", new_path, class: "btn btn-outline-primary" %>
+</div>

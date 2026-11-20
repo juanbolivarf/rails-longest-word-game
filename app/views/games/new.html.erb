@@ -1,0 +1,16 @@
+<div class="container py-5 text-center">
+  <h1 class="mb-4">New game</h1>
+  <ul class="letters list-unstyled d-flex justify-content-center gap-2 mb-4">
+    <% @letters.each do |letter| %>
+      <li class="letter"><%= letter %></li>
+    <% end %>
+  </ul>
+
+  <form action="/score" method="post" data-turbo="false" class="d-flex justify-content-center gap-2">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters.join(" ") %>
+    <label for="word" class="visually-hidden">Your word</label>
+    <input type="text" id="word" name="word" class="form-control w-25" placeholder="Your word" autofocus>
+    <input type="submit" value="Play" class="btn btn-primary">
+  </form>
+</div>
